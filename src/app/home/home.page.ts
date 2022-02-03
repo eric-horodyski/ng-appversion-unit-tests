@@ -13,14 +13,14 @@ export class HomePage implements OnInit {
   constructor(private appVersion: AppVersion) {}
 
   async ngOnInit() {
-    // const info = await Device.getInfo();
-    // if (info.platform === 'android') {
-    //   this.versionLabel = await this.appVersion.getVersionNumber();
-    // } else {
-    // this.versionLabel =
-    //   (await this.appVersion.getVersionNumber()) +
-    //   '.' +
-    //   (await this.appVersion.getVersionCode());
-    //}
+    const info = await Device.getInfo();
+    if (info.platform === 'android') {
+      this.versionLabel = await this.appVersion.getVersionNumber();
+    } else {
+      this.versionLabel =
+        (await this.appVersion.getVersionNumber()) +
+        '.' +
+        (await this.appVersion.getVersionCode());
+    }
   }
 }

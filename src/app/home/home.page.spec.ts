@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AppVersion } from '@ionic-enterprise/app-version/ngx';
 import { IonicModule } from '@ionic/angular';
@@ -12,13 +11,15 @@ describe('HomePage', () => {
 
   beforeEach(
     waitForAsync(() => {
+      //const appVersion = jasmine.createSpyObj<AppVersion>('AppVersion', {});
+
       TestBed.configureTestingModule({
         declarations: [HomePage],
         imports: [IonicModule.forRoot()],
         providers: [
           {
             provide: AppVersion,
-            use: AppVersionMock,
+            useClass: AppVersionMock,
           },
         ],
       }).compileComponents();

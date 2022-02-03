@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { AppVersion } from '@ionic-enterprise/app-version';
+import { AppVersion } from '@ionic-enterprise/app-version/ngx';
 
 import { AppComponent } from './app.component';
 import { AppVersionMock } from './mocks/app-version.mock';
@@ -8,10 +8,10 @@ import { AppVersionMock } from './mocks/app-version.mock';
 describe('AppComponent', () => {
   beforeEach(
     waitForAsync(() => {
+      const appVersion = new AppVersionMock();
       TestBed.configureTestingModule({
         declarations: [AppComponent],
         schemas: [CUSTOM_ELEMENTS_SCHEMA],
-        providers: [{ provider: AppVersion, use: AppVersionMock }],
       }).compileComponents();
     })
   );
