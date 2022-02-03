@@ -1,0 +1,7 @@
+{
+  "name": "ng-appversion-unit-tests",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
